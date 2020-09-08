@@ -1,15 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {getFullStationInformation} from '../actions/stationActions';
-
 import StationCard from './StationCard';
 
 class AllStationsList extends React.Component{
-    constructor(props){
-        super(props);
-        this.props.getFullStationInformation();
-    }
 
     renderStations = () => {
         return this.props.stations.map((station, index)=>{
@@ -34,4 +28,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getFullStationInformation})(AllStationsList);
+export default connect(mapStateToProps)(AllStationsList);

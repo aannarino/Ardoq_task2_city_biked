@@ -4,7 +4,14 @@ import {connect} from 'react-redux';
 import MapCard from './MapCard';
 import AllStationsList from './AllStationsList';
 
+import {getFullStationInformation} from '../actions/stationActions';
+
 class BodyWrapper extends React.Component{
+    constructor(props){
+        super(props);
+        this.props.getFullStationInformation();
+    }
+
     renderView(){
         if(this.props.view === "LIST"){
             return <AllStationsList />
@@ -14,7 +21,7 @@ class BodyWrapper extends React.Component{
 
     render(){
         return(
-            <React.Fragment >
+            <React.Fragment>
                 {this.renderView()}
             </React.Fragment>
         );
@@ -28,4 +35,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps )(BodyWrapper)
+export default connect(mapStateToProps, {getFullStationInformation})(BodyWrapper)

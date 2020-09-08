@@ -1,6 +1,5 @@
 import React from 'react';
 
-import AllStationsList from './components/AllStationsList';
 import ViewSwitch from './components/ViewSwitch';
 import BodyWrapper from './components/BodyWrapper';
 
@@ -13,7 +12,7 @@ function App() {
           <p className="lead">This is an app designed to integrate with the Oslo City Bikes API, enjoy!</p>
         </div>
       </div>
-      <div className="container">
+      <div className="container fluid">
         <ViewSwitch />
         <BodyWrapper />
       </div>
