@@ -1,11 +1,22 @@
 import React from 'react';
 
-import AllStations from './components/AllStations';
+import AllStationsList from './components/AllStationsList';
+import ViewSwitch from './components/ViewSwitch';
+import BodyWrapper from './components/BodyWrapper';
 
 function App() {
   return (
-    <div className="App">
-      <AllStations />
+    <div className="App ">
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="display-4">Oslo City Bikes Tracker</h1>
+          <p className="lead">This is an app designed to integrate with the Oslo City Bikes API, enjoy!</p>
+        </div>
+      </div>
+      <div className="container">
+        <ViewSwitch />
+        <BodyWrapper />
+      </div>
     </div>
   );
 }

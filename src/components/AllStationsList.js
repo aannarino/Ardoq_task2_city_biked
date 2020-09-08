@@ -5,7 +5,7 @@ import {getFullStationInformation} from '../actions/stationActions';
 
 import StationCard from './StationCard';
 
-class AllStations extends React.Component{
+class AllStationsList extends React.Component{
     constructor(props){
         super(props);
         this.props.getFullStationInformation();
@@ -22,7 +22,7 @@ class AllStations extends React.Component{
     render(){
         return(
             <div className="container">
-               {this.renderStations()}
+                    {this.renderStations()}
             </div>
         )
     }
@@ -34,4 +34,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getFullStationInformation})(AllStations);
+export default connect(mapStateToProps, {getFullStationInformation})(AllStationsList);

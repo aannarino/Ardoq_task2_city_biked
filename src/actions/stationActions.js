@@ -7,7 +7,6 @@ export const getFullStationInformation = () => dispatch => {
     const stationInfoPromise = cityBikesAPI
                                     .get('station_information.json')
                                     .then(response => {
-                                        console.log('fetching info')
                                         const stationInformation = response.data.data.stations;
                                         return stationInformation;
                                     })
@@ -17,7 +16,6 @@ export const getFullStationInformation = () => dispatch => {
     const stationStatusPromise = cityBikesAPI
                                     .get('station_status.json')
                                     .then(response => {
-                                        console.log('fetching status')
                                         const stationStatus = response.data.data.stations;
                                         return stationStatus;
                                     })
