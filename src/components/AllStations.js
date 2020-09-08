@@ -1,21 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {fetchStationStatus} from '../actions/stationActions';
-import {FETCH_STATION_STATUS} from '../actions/types';
+import {getFullStationInformation} from '../actions/stationActions';
 
 import StationCard from './StationCard';
 
 class AllStations extends React.Component{
     constructor(props){
         super(props);
-        this.props.fetchStationStatus();
+        this.props.getFullStationInformation();
     }
 
     renderStations = () => {
         return this.props.stations.map((station, index)=>{
             return(
-                <StationCard key={index} stationName={station.name} />
+                <StationCard key={index} station={station} />
             )
         })
     }
@@ -23,7 +22,7 @@ class AllStations extends React.Component{
     render(){
         return(
             <div className="container">
-                {this.renderStations()}
+               {this.renderStations()}
             </div>
         )
     }
@@ -31,8 +30,8 @@ class AllStations extends React.Component{
 
 const mapStateToProps = state => {
     return{
-        stations: Object.values(state.stationStatus.data.stations)
+        stations: Object.values(state.stationStatus)
     }
 }
 
-export default connect(mapStateToProps, {fetchStationStatus})(AllStations);
+export default connect(mapStateToProps, {getFullStationInformation})(AllStations);
