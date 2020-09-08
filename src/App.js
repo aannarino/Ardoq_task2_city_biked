@@ -1,9 +1,11 @@
 import React from 'react';
 
+import AllStations from './components/AllStations';
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <AllStations />
     </div>
   );
 }
