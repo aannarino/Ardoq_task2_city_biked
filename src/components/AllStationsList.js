@@ -6,6 +6,16 @@ import StationCard from './StationCard';
 class AllStationsList extends React.Component{
 
     renderStations = () => {
+        if(this.props.stations.length === 1){
+            return(
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border " role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                </div>
+                
+            )
+        }
         return this.props.stations.map((station, index)=>{
             return(
                 <StationCard key={index} station={station} />
@@ -24,7 +34,7 @@ class AllStationsList extends React.Component{
 
 const mapStateToProps = state => {
     return{
-        stations: Object.values(state.stationStatus)
+        stations: Object.values(state.stationStatus),
     }
 }
 

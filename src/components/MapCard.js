@@ -43,6 +43,17 @@ class MapCard extends React.Component{
         });
     }
 
+    createInfoWindow(station){
+        let infoWindow = new window.google.maps.InfoWindow();
+        let content;
+        if(station.is_renting){
+            content = "<h3>"+station.name+"</h3><p>Available: "+station.num_bikes_available+"</p><p>Free Spaces: "+station.num_docks_available+"</p>";
+        }else{
+            content = "Sorry, this station is currently not renting bikes."
+        }
+        infoWindow.setContent(content);
+    }
+
     componentDidMount(){
         this.renderMap();
     }

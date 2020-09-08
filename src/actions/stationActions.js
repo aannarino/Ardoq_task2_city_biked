@@ -3,7 +3,7 @@ import cityBikesAPI from '../apis/cityBikes';
 import{ FETCH_STATION_STATUS } from './types';
 
 export const getFullStationInformation = () => dispatch => {
-    
+
     const stationInfoPromise = cityBikesAPI
                                     .get('station_information.json')
                                     .then(response => {
